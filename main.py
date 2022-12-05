@@ -286,7 +286,6 @@ def ProgramFour():
     print(f'Изначальный текст для кодирования: {fileToEncoding}')
     print(f'Кодированный текст: {encoding(fileToEncoding)}')
 
-    print(f'Изначальный текст для декодирования: {filetoDecoding}')
     print(f'Изначальный текст для декодирования:')
     for i in filetoDecoding:
         if i == '':
