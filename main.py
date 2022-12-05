@@ -249,7 +249,6 @@ def ProgramThree():
 # Задача 4 Реализуйте RLE алгоритм: реализуйте модуль сжатия и восстановления данных.
 
 def ProgramFour():
-    text = 'aaabbbaaabaaac'
 
     def encoding(string):
         result = ''
@@ -281,10 +280,26 @@ def ProgramFour():
                 count = 0
         return result
 
-    encodeText = encoding(text)
-    print(f'Изначальный текст: {text}')
-    print(f'Кодированный текст: {encoding(text)}')
-    print(f'Декодированный текст: {decoding(encodeText)}')
+
+    fileToEncoding = open('encoding.txt', 'r').readline()
+    filetoDecoding = open('decoding.txt', 'r')
+    print(f'Изначальный текст для кодирования: {fileToEncoding}')
+    print(f'Кодированный текст: {encoding(fileToEncoding)}')
+
+    print(f'Изначальный текст для декодирования: {filetoDecoding}')
+    print(f'Изначальный текст для декодирования:')
+    for i in filetoDecoding:
+        if i == '':
+            break
+        print(i)
+    filetoDecoding.seek(0, 0)
+    print('Декодированный файл:')
+    for i in filetoDecoding:
+        if i == '':
+            break
+        print(decoding(str(i)))
+
+    # print(f'Декодированный текст: {decoding(filetoDecoding)}')
     MainProgram()
 
 
